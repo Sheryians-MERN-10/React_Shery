@@ -10,7 +10,6 @@ const page = () => {
   const [mainTask, setMainTask] = useState([]);
   const [updateIndex, setUpdateIndex] = useState(null);
 
-  let renderTask = <h2 className='text-purple-800 text-2xl font-normal' >No Task Available !</h2>;
 
   const handleForm = (e) => {
     e.preventDefault();
@@ -81,27 +80,6 @@ const page = () => {
     setUpdateIndex(null);
   }
 
-
-  // console.log("Initial: ", mainTask.length);
-  if (mainTask.length > 0) {
-
-    renderTask = mainTask.map((e, index) => {
-      // console.log(e.title)
-      // console.log(e.desc)
-      return (
-
-        <div key={index} id={'task' + index} className='w-4/5 duration-500  min-h-full bg-teal-800 flex items-center border-gray-500 border-b-[1px] text-wrap'>
-          <div className='w-[28%] h-full py-2 pl-6  bg-teal-700' >{index + 1}. {e.title} </div>
-          <div className='w-[4%] text-center' >:</div>
-          <div className='w-[68%] h-full font-normal py-2 text-justify ' > {e.desc} </div>
-          <button onClick={() => handleEdit(index)} type="button" className='py-1 px-8 mx-4 bg-green-600 hover:bg-green-700 rounded-full font-medium text-base ' >Edit</button>
-          <button onClick={() => handleDelete(index)} type="button" className='py-1 px-6 mr-6 w-fit bg-red-600 hover:bg-red-700 rounded-full font-semibold text-base ' >Delete</button>
-        </div>
-
-      )
-    })
-  }
-
   return (
     <>
       <div className='bg-blue-900 font-bold text-6xl text-center py-4 text-white ' >Todo List</div>
@@ -114,7 +92,19 @@ const page = () => {
       <div className='min-h-12 py-4 w-full text-white font-bold text-xl flex flex-col justify-center items-center' >
 
 
-        {renderTask}
+        {console.log(mainTask)}
+        {(mainTask.length > 0) ?
+          mainTask.map((e, index) => {
+            return (
+              <div key={index} id={'task' + index} className='w-4/5 duration-500  min-h-full bg-teal-800 flex items-center border-gray-500 border-b-[1px] text-wrap'>
+                <div className='w-[28%] h-full py-2 pl-6  bg-teal-700' >{index + 1}. {e.title} </div>
+                <div className='w-[4%] text-center' >:</div>
+                <div className='w-[68%] h-full font-normal py-2 text-justify ' > {e.desc} </div>
+                <button onClick={() => handleEdit(index)} type="button" className='py-1 px-8 mx-4 bg-green-600 hover:bg-green-700 rounded-full font-medium text-base ' >Edit</button>
+                <button onClick={() => handleDelete(index)} type="button" className='py-1 px-6 mr-6 w-fit bg-red-600 hover:bg-red-700 rounded-full font-semibold text-base ' >Delete</button>
+              </div>
+            )
+          }) : <h2 className='text-purple-800 text-2xl font-normal' >No Task Available !</h2>}
 
       </div>
     </>

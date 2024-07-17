@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+
+.my-btn{
+  @apply px-8 py-2 m-6 rounded-full font-semibold text-white bg-blue-500 hover:bg-blue-700 duration-150;
+}
+
+@tailwind utilities;

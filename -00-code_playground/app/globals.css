@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+
+.my-btn{
+  @apply cursor-pointer px-8 py-2 m-6 rounded bg-blue-500 text-white font-semibold shadow-lg hover:bg-blue-700 duration-150;
+  
+}
+
+@tailwind utilities;

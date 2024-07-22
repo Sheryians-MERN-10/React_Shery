@@ -1,0 +1,54 @@
+/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.form-container {
+    @apply max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg;
+}
+
+.form-title {
+    @apply text-2xl font-bold mb-6 text-center;
+}
+
+.form-group {
+    @apply mb-4;
+}
+
+.form-label {
+    @apply block text-gray-700 font-medium mb-2;
+}
+
+.form-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500;
+}
+
+.radio-group {
+    @apply mb-4;
+}
+
+.radio-label {
+    @apply inline-flex items-center mr-5;
+}
+
+.radio-input {
+    @apply  text-indigo-600 mr-1;
+}
+
+.checkbox-group {
+    @apply mb-6;
+}
+
+.checkbox-label {
+    @apply inline-flex items-center;
+}
+
+.checkbox-input {
+    @apply text-indigo-600 mr-1;
+}
+
+.submit-button {
+    @apply w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500;
+}

@@ -1,0 +1,7 @@
+.myheadingM{
+    @apply italic font-mono text-2xl text-teal-500 font-semibold;
+}
+
+.myBtnM{
+    @apply px-4 py-1 rounded-lg bg-indigo-500 font-mono text-2xl text-white font-semibold;
+}

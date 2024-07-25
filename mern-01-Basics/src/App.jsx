@@ -12,8 +12,13 @@ import _02_Revision from './Components/ClassOffline/_02_Revision'
 import _03_Props from './Components/ClassOffline/_03_Props'
 import _04_MouduleCss from './Components/ClassOffline/_04_MouduleCss'
 import _05_ViteEnvironmentVar from './Components/ClassOffline/_05_ViteEnvironmentVar'
+import MyComponent from './Components/ClassOffline/_06_HOC/MyComponent'
+import withUsers from './Components/ClassOffline/_06_HOC/WithUsers'
 
 const App = () => {
+
+    const EnhancedComp = withUsers(MyComponent);
+
     return (
         <>
             {/* <Navbar /> */}
@@ -35,7 +40,12 @@ const App = () => {
             {/* <_04_MouduleCss /> */}
             {/* <p className='my-heading1'>Hello, App.jsx</p> */}
 
-            <_05_ViteEnvironmentVar />
+            {/* <_05_ViteEnvironmentVar /> */}
+
+            {/*//todo 3. HOC का उपयोग करें: */}
+            {/* <MyComponent name={"Ayush"} /> */}
+            
+            <EnhancedComp age={13} />
 
         </>
     )

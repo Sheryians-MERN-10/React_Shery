@@ -9,25 +9,26 @@ import Counter from "./Components/Reducer/Counter"
 import _01_Basics from './Components/ClassOffline/_01_Basics'
 import _02_TwoWayBinding from './Components/ClassOffline/_02_TwoWayBinding'
 import _02_Revision from './Components/ClassOffline/_02_Revision'
-
+import _03_Props from './Components/ClassOffline/_03_Props'
 const App = () => {
     return (
         <>
-            
-
             {/* <Navbar /> */}
 
             {/* <LearnHooks />             */}
-            
+
 
             {/* <Counter /> */}
 
             {/* <_01_Basics /> */}
 
-            <_02_TwoWayBinding />
+            {/* This Forms submit feature handler */}
+            {/* <_02_TwoWayBinding /> */}
 
             {/* <_02_Revision /> */}
 
+
+            <_03_Props />
         </>
     )
 }

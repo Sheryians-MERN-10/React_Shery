@@ -1,0 +1,11 @@
+@import './nav.css';
+@import './footer.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.my-heading{
+    @apply text-3xl text-teal-500 italic font-extrabold;
+}

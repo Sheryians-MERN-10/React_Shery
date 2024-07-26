@@ -1,0 +1,15 @@
+.footer {
+    @apply bg-gray-800 text-white py-6 bottom-0 fixed w-full;
+}
+
+.footer-container {
+    @apply container mx-auto flex flex-col items-center;
+}
+
+.footer-text {
+    @apply text-center text-sm;
+}
+
+.footer-link {
+    @apply text-gray-400 hover:text-gray-300 mx-2;
+}

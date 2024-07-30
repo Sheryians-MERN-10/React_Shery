@@ -4,9 +4,12 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 
 import './stylesheets/index.css'
+import UserProvider from './context/UserContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <App />
+    <UserProvider>
+      <App />
+    </UserProvider>
   </BrowserRouter>
 )

@@ -9,3 +9,7 @@
 .my-heading{
     @apply text-3xl text-teal-500 italic font-extrabold;
 }
+
+.my-link{
+    @apply px-3 text-blue-500 hover:text-blue-600 underline cursor-pointer text-xl font-bold;
+}

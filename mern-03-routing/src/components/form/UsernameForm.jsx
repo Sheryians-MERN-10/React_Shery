@@ -1,12 +1,29 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 
 const UsernameForm = () => {
     const [username, setUsername] = useState('');
     const navigate = useNavigate();
-
     const { users, setUsers } = useContext(UserContext);
+    
+    const [isError, setIsError] = useState(false);
+    const myInpRef = useRef(null);
+
+    const handleChangeInput = (e) => {
+        // console.log(myInpRef);
+        // console.log(myInpRef.current);
+        // console.log(myInpRef.current.value);
+
+        if (myInpRef.current.value.length > 4) {
+            setIsError(false);
+        } else {
+            setIsError(true);
+        }
+
+        setUsername(e.target.value);
+    }
+
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,13 +43,18 @@ const UsernameForm = () => {
                     <div>
                         <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username</label>
                         <input
+                            ref={myInpRef}       // ⭐⭐⭐
                             type="text"
                             id="username"
                             value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            // onChange={(e) => setUsername(e.target.value)}
+                            onChange={handleChangeInput}
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                             required
                         />
+                        {
+                            isError && ( <small className='my-error'>Invalid User Name</small> )
+                        }
                     </div>
                     <button
                         type="submit"

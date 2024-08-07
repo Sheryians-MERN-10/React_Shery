@@ -1,0 +1,26 @@
+.navbar {
+    @apply bg-gray-800 mb-12 text-white p-4 w-full h-16 top-0 left-0 z-50;
+}
+
+.navbar-container {
+    @apply container mx-auto flex justify-between items-center;
+}
+
+.navbar-logo {
+    @apply text-2xl font-bold;
+}
+
+.navbar-links {
+    @apply flex space-x-8 mr-12;
+}
+
+.navbar-link {
+    @apply px-4 hover:text-gray-400 cursor-pointer font-bold;
+}
+
+/* / ----------- \ */
+.active-link {
+    @apply underline text-amber-500 hover:text-amber-600;
+}
+
+/* \ ----------- / */

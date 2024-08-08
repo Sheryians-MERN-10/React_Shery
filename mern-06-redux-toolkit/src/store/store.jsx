@@ -1,15 +1,14 @@
-// import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit'; // Import the configureStore function from Redux Toolkit
+import yourReducer from './reducers/yourSlice'; // Import the reducer from your slice file
 
-// export const store = configureStore({
-//     reducer: {},
-// })
-
-// ####### SETP 2 #######
-import { configureStore } from "@reduxjs/toolkit";
-import counterSlice from "./reducers/counterSlice";
-
-export const store = configureStore({
+// Configure and create the Redux store
+const store = configureStore({
     reducer: {
-        counter: counterSlice,
+        // Define the root reducer and the corresponding state key
+        // Here, `yourState` is the key in the state tree, and `yourReducer` is the reducer managing that part of the state
+        // counter: counterReducer
+        NameOfStoreSlice: yourReducer,
     },
-})
+});
+
+export default store;
